@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Compile the .cpp code directly using a shell script
-                    writeFile file: 'pes1ug21cs743.cpp', text: '#include <iostream>\n\nint main() {\n    std::cout << "Hello, Jenkins!";\n    return 0;\n}\n'
-                    sh 'g++ -o my_executable pes1ug21cs743.cpp'
+                    // Intentional error: added a syntax error in the C++ code
+                    writeFile file: 'pes1ug21cs741.cpp', text: '#include <iostream>\n\nint main() {\n    std::cout << "Hello, Jenkins!";\n    return 0;\n'
+                    sh 'g++ -o my_executable pes1ug21cs741.cpp'
                 }
             }
         }
